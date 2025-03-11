@@ -14,34 +14,34 @@
 <body>
 
     <section class="dashboard ">
-        <div class="side-bar ">
+        <div class="side-bar " id="sidebar">
             <div class="logo-container">
                 <img src="img/favicon.ico.png" alt="">
                 <h4>NIGERIA COLLEGE OF AVIATION TECHNOLOGY</h4>
             </div>
 
             <div class="menu">
-                <div class="menu-items active" >
+                <div class="menu-items active" data-target="dashboard">
                     <i class="bi bi-stack"></i>
                     <h5>Dashboard</h5>
                 </div>
-                <div class="menu-items" >
+                <div class="menu-items" data-target="block-a">
                     <i class="bi bi-buildings"></i>
                     <h5>Block A</h5>
                 </div>
-                <div class="menu-items" >
+                <div class="menu-items" data-target="block-b">
                     <i class="bi bi-buildings"></i>
                     <h5>Block B</h5>
                 </div>
-                <div class="menu-items" >
+                <div class="menu-items" data-target="block-c">
                     <i class="bi bi-buildings"></i>
                     <h5>Block C</h5>
                 </div>
-                <div class="menu-items" >
+                <div class="menu-items" data-target="block-d">
                     <i class="bi bi-buildings"></i>
                     <h5>Block D</h5>
                 </div>
-                <div class="menu-items" >
+                <div class="menu-items" data-target="block-aa">
                     <i class="bi bi-buildings"></i>
                     <h5>Block AA</h5>
                 </div>
@@ -50,9 +50,10 @@
         </div>
 
         <div class="main-content"> 
+            
             <div class="top-nav">
                 <div class="d-flex">
-                    <div class="toggle">
+                    <div class="toggle toggle-button"  id="toggle-btn">
                         <i class="bi bi-list"></i>
                     </div>
     
@@ -66,115 +67,144 @@
                 </div>
             </div>
 
-            <!-- -------------intro----------- -->
+            <!-- --------------------Dashbord-------------- -->
 
-            <div class="intro">
-                <div>
-                    <h3>Welcome to Admin Dashboard</h3>
-                    <p>NCAT Hostel Management Portal</p>
-                </div>
-
-                <form action="">
-                    <input type="text" id="" placeholder="Search">
-                </form>
-            </div>
-
-            <div class="display-section">
-                <div class="display">
+            <div class="content active" id="dashboard">
+                <!-- -------------intro----------- -->
+                <div class="intro">
                     <div>
-                        <h1>Welcome to Admin Dashboard</h1>
+                        <h3>Welcome to Admin Dashboard</h3>
                         <p>NCAT Hostel Management Portal</p>
                     </div>
-                    <img src="img/favicon.ico.png" alt="logo">
+
+                    <form action="">
+                        <input type="text" id="" placeholder="Search">
+                    </form>
+                </div>
+
+                <div class="display-section">
+                    <div class="display">
+                        <div>
+                            <h1>Welcome to Admin Dashboard</h1>
+                            <p>NCAT Hostel Management Portal</p>
+                        </div>
+                        <img src="img/favicon.ico.png" alt="logo">
+                    </div>
+                </div>
+
+                <div class="summary">
+                    <h3>Summar</h3>
+                    <div class="summary-card-cont">
+                        <div class="summary-card">
+                            <h6>Total Number of Hostels</h6>
+                            <div class="numbers t-hostel">
+                                <h3>7</h3>
+                                <div class="icon">
+                                    <i class="bi bi-lightbulb-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="summary-card ">
+                            <h6>Total Number of Rooms</h6>
+                            <div class="numbers t-rooms">
+                                <h3>300</h3>
+                                <div class="icon">
+                                    <i class="bi bi-diagram-3-fill"></i>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="summary-card ">
+                            <h6>Available Rooms</h6>
+                            <div class="numbers av-rooms">
+                                <h3>100</h3>
+                                <div class="icon">
+                                    <i class="bi bi-save"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="summary-card ">
+                            <h6>Occupied Rooms</h6>
+                            <div class="numbers ocp-rooms">
+                                <h3>200</h3>
+                                <div class="icon">
+                                    <i class="bi bi-stars"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-container">
+                    <h3>Hostels with available Rooms</h3>
+                    <div class="card-container">
+                        <div class="card-item">
+                        <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
+                        <h3>Executive Hostel</h3>
+                        <div class="d-flex">
+                                <p>Available Rooms</p>
+                                <h5><span>43</span></h5>
+                        </div>
+                        </div>
+                        <div class="card-item">
+                        <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
+                        <h3>Executive Hostel</h3>
+                        <div class="d-flex">
+                                <p>Available Rooms</p>
+                                <h5><span>43</span></h5>
+                        </div>
+                        </div>
+                        <div class="card-item">
+                        <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
+                        <h3>Executive Hostel</h3>
+                        <div class="d-flex">
+                                <p>Available Rooms</p>
+                                <h5><span>43</span></h5>
+                        </div>
+                        </div>
+                        <div class="card-item">
+                        <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
+                        <h3>Executive Hostel</h3>
+                        <div class="d-flex">
+                                <p>Available Rooms</p>
+                                <h5><span>43</span></h5>
+                        </div>
+                        </div>
+                    
+                    </div>
                 </div>
             </div>
 
-            <div class="summary">
-                <h3>Summar</h3>
-                <div class="summary-card-cont">
-                    <div class="summary-card">
-                        <h6>Total Number of Hostels</h6>
-                        <div class="numbers t-hostel">
-                            <h3>7</h3>
-                            <div class="icon">
-                                <i class="bi bi-lightbulb-fill"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="summary-card ">
-                        <h6>Total Number of Rooms</h6>
-                        <div class="numbers t-rooms">
-                            <h3>300</h3>
-                            <div class="icon">
-                                <i class="bi bi-diagram-3-fill"></i>  
-                            </div>
-                        </div>
-                    </div>
-                    <div class="summary-card ">
-                        <h6>Available Rooms</h6>
-                        <div class="numbers av-rooms">
-                            <h3>100</h3>
-                            <div class="icon">
-                                <i class="bi bi-save"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="summary-card ">
-                        <h6>Occupied Rooms</h6>
-                        <div class="numbers ocp-rooms">
-                            <h3>200</h3>
-                            <div class="icon">
-                                <i class="bi bi-stars"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- --------------------Block A-------------- -->
 
-            <div class="block-container">
-                <h3>Hostels with available Rooms</h3>
-                <div class="card-container">
-                    <div class="card-item">
-                       <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
-                       <h3>Executive Hostel</h3>
-                       <div class="d-flex">
-                            <p>Available Rooms</p>
-                            <h5><span>43</span></h5>
-                       </div>
-                    </div>
-                    <div class="card-item">
-                       <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
-                       <h3>Executive Hostel</h3>
-                       <div class="d-flex">
-                            <p>Available Rooms</p>
-                            <h5><span>43</span></h5>
-                       </div>
-                    </div>
-                    <div class="card-item">
-                       <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
-                       <h3>Executive Hostel</h3>
-                       <div class="d-flex">
-                            <p>Available Rooms</p>
-                            <h5><span>43</span></h5>
-                       </div>
-                    </div>
-                    <div class="card-item">
-                       <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
-                       <h3>Executive Hostel</h3>
-                       <div class="d-flex">
-                            <p>Available Rooms</p>
-                            <h5><span>43</span></h5>
-                       </div>
-                    </div>
-                   
-                </div>
-                 
+            <div class="content" id="block-a">
+                <h3>Block A</h3>
             </div>
+            <!-- --------------------Block B-------------- --> 
+
+            <div class="content" id="block-b">
+                <h3>Block B</h3>
+            </div>
+            <!-- --------------------Block C-------------- -->
+             
+            <div class="content" id="block-c">
+                <h3>Block C</h3>
+            </div>
+            <!-- --------------------Block D-------------- -->
+
+            <div class="content" id="block-d">
+                <h3>Block D</h3>
+            </div>
+            <!-- --------------------Block AA-------------- -->
+
+            <div class="content" id="block-aa">
+                <h3>Block AA</h3>
+            </div>
+            
         </div>
     </section>
    
 
-    
+
     <script src="js/script.js"></script>
     <script src="js/bootstrap.js"></script>
 </body>
