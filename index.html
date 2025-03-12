@@ -178,9 +178,9 @@
 
             <div class="content" id="block-a">
                 <div class="intro">
-                    <div class="d-flex gap-2">
-                        <div class="btn active">Rooms</div>
-                        <div class="btn">Occupants</div>
+                    <div class="d-flex  gap-2">
+                        <div class="btn select-btn active" data-target="first-floor">Rooms</div>
+                        <div class="btn select-btn" data-target="block-a-occupants">Occupants</div>
                     </div>
 
                     <form action="">
@@ -233,12 +233,12 @@
 
                 <!-- --------------Block-A rooms------------------------ -->
 
-                <div class="floors">
-                    <div class="first-floor">
+                <div class="floors floor_content active" id="first-floor">
+                    <div class="first-floor" >
                         <h3>First Floor</h3>
     
                         <div class="floor-container">
-                            <div class="floor-card">
+                            <div class="floor-card" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profileModal">
                                 <h6>NO. A-1</h6>
                                 <div class="room-status">
                                     <p>Room Status</p>
@@ -247,7 +247,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="floor-card">
+                            <div class="floor-card" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profileModal">
                                 <h6>NO. A-1</h6>
                                 <div class="room-status">
                                     <p>Room Status</p>
@@ -256,7 +256,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="floor-card">
+                            <div class="floor-card" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profileModal">
                                 <h6>NO. A-1</h6>
                                 <div class="room-status">
                                     <p>Room Status</p>
@@ -265,7 +265,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="floor-card">
+                            <div class="floor-card" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profileModal">
                                 <h6>NO. A-1</h6>
                                 <div class="room-status">
                                     <p>Room Status</p>
@@ -275,6 +275,59 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <!-- --------------Block-A Occupant list------------------------ -->
+                <div class="floors floor_content " id="block-a-occupants">
+                    <div class="first-floor" >
+                        <h3>List Of Occupants</h3>
+    
+                        <table class="table table-striped table-hover">
+                            <tr class="table-header">
+                                <th>S/N</th>
+                                <th>NAME</th>
+                                <th>PHONE</th>
+                                <th>SCHOOL</th>
+                                <th>COURSE</th>
+                                <th>DURATION</th>
+                                <th>ROOM</th>
+                                <th>Date Released</th>
+                                <th>Expiry Date</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Okechukwu James</td>
+                                <td>0789999999</td>
+                                <td>Aircraft Maintainance School</td>
+                                <td>Avionice</td>
+                                <td>6 months</td>
+                                <td>NO. A-1</td>
+                                <td>12/01/2022</td>
+                                <td>12/07/2022</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                        Edit
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>John Doe</td>
+                                <td>0789999999</td>
+                                <td>Aircraft Maintainance School</td>
+                                <td>Avionice</td>
+                                <td>6 months</td>
+                                <td>NO. A-2</td>
+                                <td>12/01/2022</td>
+                                <td>12/07/2022</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                        Edit
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
 
@@ -302,8 +355,170 @@
             
         </div>
     </section>
-   
 
+    <!-- ==================Edit modal============== -->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel"><h5>Occupants Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="img/OIP.jpg" alt="user">
+                        </div>
+                        <div class="profile-details ">
+                            <h5 class="text-dark">Okechukwu James</h5>
+                            <p>0789999999</p>
+                        </div>
+                    </div>
+
+                    <form action="post" class="mt-5">
+                        <div class="mb-3">
+                            <label for="name" class="">FullName</label>
+                            <input type="name" class="form-control" id="name" placeholder="Enter full Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="">Phone Number</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="school" class="">School</label>
+                            <input type="text" class="form-control" id="school" placeholder="Enter School">
+                        </div>
+                        <div class="mb-3">
+                            <label for="course" class="">Course</label>
+                            <input type="text" class="form-control" id="course" placeholder="Enter Course">
+                        </div>
+                        <div class="short-input ">
+                            <div class="mb-3 _input-cont">
+                                <label for="duration" class="">Duration</label>
+                                <input type="text" class="form-control" id="duration" placeholder="Enter Duration">
+                            </div>
+                            <div class="mb-3 _input-cont">
+                                <label for="room" class="">Room</label>
+                                <input type="text" class="form-control" id="room" placeholder="Enter Room">
+                            </div>
+                        </div>
+                        <div class="short-input">
+                            <div class="mb-3">
+                                <label for="date-released" class="">Date Released</label>
+                                <input type="date" class="form-control" id="date-released" placeholder="Enter Date Released">
+                            </div>
+                            <div class="mb-3">
+                                <label for="expiry-date" class="">Expiry Date</label>
+                                <input type="date" class="form-control" id="expiry-date" placeholder="Enter Expiry Date">
+                            </div>
+                        </div>
+                        <div class="select">
+                            <label for="status" class="">Status</label>
+                            <select class="form-select" id="status">
+                                <option selected>Select Status</option>
+                                <option value="1">Active</option>
+                                <option value="2">Inactive</option>
+                                <option value="3">Pending</option>
+                                <option value="4">Expired</option>
+                                <option value="5">Cancelled</option>
+                            </select>
+
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+ <!-- ==================profile details modal============== -->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="profileModalLabel"><h5>Occupants Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="img/OIP.jpg" alt="user">
+                        </div>
+                        <div class="profile-details ">
+                            <h5 class="text-dark">Okechukwu James</h5>
+                            <p>0789999999</p>
+                        </div>
+
+                        <div class="floor-card pr-card">
+                            <h6>NO. A-1</h6>
+                            <div class="room-status">
+                                <p>Room Status</p>
+                                <div class="status">
+                                    Available
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="details mt-3">
+                       <div class="detail-list">
+                            <h3>Name :</h3>
+                            <p>Okechukwu James</p>
+                       </div>
+                       <div class="detail-list">
+                            <h3>Phone Number:</h3>
+                            <p>0789999999</p>
+                       </div>
+                       <div class="detail-list">
+                            <h3>School:</h3>
+                            <p>Aircraft Maintainance School</p>
+                       </div>
+                       <div class="detail-list">
+                            <h3>Course:</h3>
+                            <p>Avionice</p>
+                       </div>
+                       <div class="detail-list">
+                            <h3>Duration:</h3>
+                            <p>6 months</p>
+                       </div>
+                       <div class="detail-list">
+                            <h3>Room:</h3>
+                            <p>NO. A-1</p>
+                       </div>
+                       <div class="detail-list">
+                            <h3>Date Released:</h3>
+                            <p>10/01/2021</p>
+                       </div>
+                       <div class="detail-list">
+                            <h3>Expiry Date:</h3>
+                            <p>10/07/2021</p>
+                       </div>
+                       <div class="detail-list">
+                            <h3>Status:</h3>
+                            <p>Active</p>
+                       </div>
+                    </div>
+
+                    <div type="button" class=" edit-btn" data-bs-toggle="modal" data-bs-target="#editModal">
+                        Edit
+                        <i class="bi bi-pencil-square"></i>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
     <script src="js/bootstrap.js"></script>

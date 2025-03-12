@@ -143,9 +143,16 @@ a{
     display: none; 
     min-height: 100vh;
 }
+.floor_content {
+    display: none; 
+    min-height: 100vh;
+}
 
 /* Show only the active content */
 .content.active {
+    display: block;
+}
+.floor_content.active {
     display: block;
 }
 
@@ -628,4 +635,94 @@ color: var(--color-background) !important;
     text-align: center;
     font-size: 16px;
     font-weight: 600;
+}
+
+/* ------------Occupant List---------- */
+
+th{
+    background: var(--Blue-Light-fill, rgba(8, 38, 148, 0.20)) !important;
+}
+
+/* ------------edit Occupant info ---------- */
+
+.modal h5{
+    color: var(--color-blue);
+}
+.profile-img img{
+    width: 80px;
+    height: auto;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.profile-details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+.short-input{
+    display: flex;
+}
+._input-cont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;;
+}   
+.short-input input[type="date"]{
+    width: 150px;
+    display: flex;
+    flex: 1 0 0;
+}
+.modal input[type="text"], input[type="date"], input[type="name"], select{
+    background: var(--gray-100, #F0F0F0);
+    display: flex;
+    padding: 4px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+label{
+    color: var(--color-gray-dark);
+    font-size: 14px;
+    font-weight: 600;
+}
+.pr-card{
+    background-color: #dddada;
+}
+
+/*------------profile details modal---------- */
+.edit-btn{
+    display: inline-flex;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 15.329px;
+    border-radius: 6.132px;
+    background: rgba(61, 88, 219, 0.13);
+}
+.edit-btn i{
+    color: var(--color-blue);
+    font-size: 24px;
+}
+
+.detail-list{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.detail-list h3{
+    font-size: 16px !important;
+}
+.detail-list p{
+    text-align: left !important;
+    font-size: 18px !important;
+
+}
+.detail{
+    display: flex;
+    flex-direction: column;
+    gap: 10px !important;
 }
