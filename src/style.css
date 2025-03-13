@@ -782,4 +782,5 @@ label{
     display: flex;
     flex-direction: column;
     gap: 10px !important;
+    text-align: left;
 }
