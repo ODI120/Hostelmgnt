@@ -57,7 +57,7 @@
                         <i class="bi bi-list"></i>
                     </div>
     
-                    <h3>Welcome, Admin</h3>
+                    <h3>Dashboard</h3>
                 </div>
                 
                 <div class="profile">
@@ -178,36 +178,40 @@
 
             <div class="content" id="block-a">
                 <div class="intro">
-                    <div class="d-flex  gap-2">
-                        <div class="btn select-btn active" data-target="first-floor">Rooms</div>
-                        <div class="btn select-btn" data-target="block-a-occupants">Occupants</div>
+                    <h3>Block-A Hostel Summary</h3>
+                    <!-- <p>Number of facilities in a Single room</p> -->
+                </div>
+                <div class="intro">
+                    <div class="sum-total">
+                        <div class="sum-card  BA-available">
+                            <h6>Available</h6>
+                            <div class="icon">
+                                <h3>27</h3>
+                                <i class="bi bi-box-fill"></i>
+                            </div>
+                        </div>
+                        <div class="sum-card BA-available">
+                            <h6>Occupied</h6>
+                            <div class="icon">
+                                <h3>27</h3>
+                                <i class="bi bi-gear"></i>
+                            </div>
+                        </div>
+                        <div class="sum-card BA-available">
+                            <h6>Total</h6>
+                            <div class="icon">
+                                <h3>300</h3>
+                                <i class="bi bi-gear"></i>
+                            </div>
+                        </div>
                     </div>
 
-                    <form action="">
-                        <input type="text" id="" placeholder="Search">
-                    </form>
+                    
                 </div>
                 <div class="intro">
                     <div>
                         <h3>Hostel Inventrory</h3>
                         <p>Number of facilities in a Single room</p>
-                    </div>
-
-                    <div class="sum-total">
-                        <div class="sum-card">
-                            <h6>Available</h6>
-                            <div class="icon">
-                                <h3>27</h3>
-                                <i class="bi bi-gear">tree</i>
-                            </div>
-                        </div>
-                        <div class="sum-card">
-                            <h6>Occupied</h6>
-                            <div class="icon">
-                                <h3>27</h3>
-                                <i class="bi bi-gear">tree</i>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -230,7 +234,13 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- -------------toggle button----------- -->
+                <div class="intro">
+                    <div class="d-flex  gap-2">
+                        <div class="btn select-btn active" data-target="first-floor">Rooms</div>
+                        <div class="btn select-btn" data-target="block-a-occupants">Occupants</div>
+                    </div>
+                </div>
                 <!-- --------------Block-A rooms------------------------ -->
 
                 <div class="floors floor_content active" id="first-floor">
