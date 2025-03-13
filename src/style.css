@@ -583,11 +583,14 @@ color: var(--color-background) !important;
     color: #F90047;
  }
 
- @media  screen and (min-width: 375px){
+ @media  screen and (max-width: 375px){
     .BA-available{
         gap: 3px;
         padding: 10px 16px;
     } 
+    .toggle i{
+        margin-right: 1px;
+    }
  }
  .BA-available i{
     background-color: #f900473b;
@@ -608,12 +611,12 @@ color: var(--color-background) !important;
 }
 
 .BA-available:nth-child(3) i{
-    color: #014380;
-    background-color: #01438050;
+    color: var(--color-blue);
+    background-color: #0d6dfd50;
 }
 .BA-available:nth-child(3){
-    color: #014380;
-    background-color: #01438050;
+    color: var(--color-blue);
+    background-color: #0d6dfd50;
     /* min-width: 327px !important; */
 }
 .BA-available:nth-child(3) h3{
