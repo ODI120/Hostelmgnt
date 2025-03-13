@@ -11,7 +11,9 @@ h1,h2,h3,h4,h5,h6,p{
     margin: 0 !important;
     padding: 0 !important;
 }
-
+.btn-primary, .btn-secondary{
+    border-radius: 60px !important;
+}
 .expanded {
     max-width: 1320px;
     }
@@ -694,7 +696,11 @@ color: var(--color-background) !important;
 th{
     background: var(--Blue-Light-fill, rgba(8, 38, 148, 0.20)) !important;
 }
-
+#table{
+    overflow: scroll;
+    width: 100%;
+    border-radius: 4px;
+}
 /* ------------edit Occupant info modal---------- */
 
 .modal h5{
@@ -746,16 +752,17 @@ label{
 }
 .pr-card{
     background-color: #dddada;
+    gap: 0PX !important;
 }
 
 /*------------profile details modal---------- */
 .edit-btn{
     display: inline-flex;
-    padding: 8px 24px;
+    padding: 5px 24px;
     justify-content: center;
     align-items: center;
     gap: 15.329px;
-    border-radius: 6.132px;
+    border-radius: 50px;
     background: rgba(61, 88, 219, 0.13);
 }
 .edit-btn i{
@@ -769,18 +776,34 @@ label{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    background-color: #F0F0F0;
+    padding: 8px;
+    border-radius: 3px;
+    margin-bottom: 3px;
 }
 .detail-list h3{
     font-size: 16px !important;
 }
 .detail-list p{
-    text-align: left !important;
-    font-size: 18px !important;
-
+    text-align: left ;
+    font-size: 16px ;
+    width: 150px;
+    font-weight: 500;
 }
-.detail{
+
+.profile_info{
     display: flex;
-    flex-direction: column;
-    gap: 10px !important;
-    text-align: left;
+    align-items: center;
+}
+.profile-top{
+    display: flex;
+}
+@media screen and (max-width: 505px) {
+    .profile-top{
+        display: block;
+    }
+    .pr-card{
+        margin-top: 10px;
+    }
+    
 }
