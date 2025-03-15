@@ -763,7 +763,9 @@ label{
     align-items: center;
     gap: 15.329px;
     border-radius: 50px;
-    background: rgba(61, 88, 219, 0.13);
+    /* background: rgba(61, 88, 219, 0.13); */
+    color: var(--color-white);
+    background-color: var(--color-blue);
 }
 .edit-btn i{
     color: var(--color-blue);
@@ -806,4 +808,39 @@ label{
         margin-top: 10px;
     }
     
+}
+
+/* ---------Accordion---------- */
+
+.accordion { 
+    width: 100%; 
+    overflow: hidden; 
+} 
+.accordion-item { 
+    border: 0px solid #ccc !important; 
+} 
+
+.accordion-content { 
+    display: none; 
+    padding: 10px; 
+    background: #fff;
+    /* display: flex; */
+ 
+} 
+.active {
+    display: block; 
+} 
+.accordion-cont-holder{
+    display: flex;
+    gap: 8px;
+    align-self: stretch;
+    flex: 1 0 0;
+    flex-wrap: wrap;
+}
+.facility-list{
+    background-color: #ccc;
+    border-radius: 4px;
+    padding: 4px 10px !important;
+    flex: 1 0 0;
+    min-width: 100px;
 }

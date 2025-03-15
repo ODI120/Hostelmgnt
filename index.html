@@ -137,39 +137,31 @@
                 <div class="block-container">
                     <h3>Hostels with available Rooms</h3>
                     <div class="card-container">
-                        <div class="card-item">
-                        <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
-                        <h3>Executive Hostel</h3>
-                        <div class="d-flex">
+                        <div class="card-item menu-items " data-target="block-a">
+                            <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
+                            <h3>Executive Hostel</h3>
+                            <div class="d-flex">
                                 <p>Available Rooms</p>
                                 <h5><span>43</span></h5>
+                            </div>
                         </div>
-                        </div>
-                        <div class="card-item">
-                        <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
-                        <h3>Executive Hostel</h3>
-                        <div class="d-flex">
+                        <div class="card-item menu-items " data-target="block-a">
+                            <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
+                            <h3>Executive Hostel</h3>
+                            <div class="d-flex">
                                 <p>Available Rooms</p>
                                 <h5><span>43</span></h5>
+                            </div>
                         </div>
-                        </div>
-                        <div class="card-item">
-                        <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
-                        <h3>Executive Hostel</h3>
-                        <div class="d-flex">
+                        <div class="card-item menu-items " data-target="block-a">
+                            <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
+                            <h3>Executive Hostel</h3>
+                            <div class="d-flex">
                                 <p>Available Rooms</p>
                                 <h5><span>43</span></h5>
+                            </div>
                         </div>
-                        </div>
-                        <div class="card-item">
-                        <img src="img/pexels-curtis-adams-1694007-8031878.jpg" alt=""> 
-                        <h3>Executive Hostel</h3>
-                        <div class="d-flex">
-                                <p>Available Rooms</p>
-                                <h5><span>43</span></h5>
-                        </div>
-                        </div>
-                    
+                                            
                     </div>
                 </div>
             </div>
@@ -208,17 +200,17 @@
 
                     
                 </div>
-                <div class="intro">
+                <!-- <div class="intro">
                     <div>
                         <h3>Hostel Inventrory</h3>
                         <p>Number of facilities in a Single room</p>
                     </div>
-                </div>
+                </div> -->
 
                 
                 <!-- ----------facilities---------- -->
 
-                <div class="facilities-container">
+                <!-- <div class="facilities-container">
                     <div class="facility">
                         <div class="facilities">
                             <h6>1 set of Bed & Mattras</h6>
@@ -233,7 +225,7 @@
                             <h6>1 set of Bed & Mattras</h6>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- -------------toggle button----------- -->
                 <div class="intro">
                     <div class="d-flex  gap-2">
@@ -454,15 +446,15 @@
    
  <!-- ==================profile details modal============== -->
     
-    <!-- Modal -->
+    <!-- Modal id="overlay" -->
     <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog" >
             <div class="modal-content">
                 <div class="modal-header">
                 <h5 class="modal-title" id="profileModalLabel"><h5>Occupants Information</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" id="overlay">
                     <div class=" profile-top">
                         <div class="profile_info gap-2 ">
                             <div class="profile-img">
@@ -485,6 +477,29 @@
                         </div>
                     </div>
                     
+                    
+                    <div class="accordion"> 
+                        <div class="accordion-item"> 
+                            
+                            <div type="button" class="accordion-header edit-btn mt-3" >
+                                View Room facilities
+                            </div>
+
+                            <div class="accordion-content">
+                                <div class="accordion-cont-holder">
+                                    
+                                    <p class="facility-list"> 1 Bed frame</p>
+                                    <p class="facility-list"> 1 Bed frame</p>
+                                    <p class="facility-list"> 1 Bed frame</p>
+                                    <p class="facility-list"> 1 Bed frame</p>
+                                    <p class="facility-list"> 1 Bed frame</p>
+                                    <p class="facility-list"> 1 Bed frame</p>
+                                    <p class="facility-list"> 1 Bed frame</p>
+                                </div>
+                            </div> 
+                        </div> 
+                    </div> 
+
                     <div class="details mt-3">
                        <div class="detail-list">
                             <h3>Name :</h3>
@@ -538,8 +553,13 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+
+                    <div onclick="saveOverlayAsPDF()" type="button" class=" edit-btn ">
+                        Print Details 
+                    </div>
+
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button> -->
                 </div>
             </div>
         </div>
