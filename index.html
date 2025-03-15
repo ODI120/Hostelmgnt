@@ -243,7 +243,16 @@
                         <h3>First Floor</h3>
     
                         <div class="floor-container">
-                            <div class="floor-card" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profileModal">
+                            <div class="floor-card" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#profileModal">
+                                <h6>NO. A-1</h6>
+                                <div class="room-status">
+                                    <p>Room Status</p>
+                                    <div class="status booked">
+                                        Booked
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="floor-card" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
                                 <h6>NO. A-1</h6>
                                 <div class="room-status">
                                     <p>Room Status</p>
@@ -252,30 +261,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="floor-card" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profileModal">
+                            <div class="floor-card" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#profileModal">
                                 <h6>NO. A-1</h6>
                                 <div class="room-status">
                                     <p>Room Status</p>
-                                    <div class="status">
-                                        Available
+                                    <div class="status booked">
+                                        Booked
                                     </div>
                                 </div>
                             </div>
-                            <div class="floor-card" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profileModal">
+                            <div class="floor-card" type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#profileModal">
                                 <h6>NO. A-1</h6>
                                 <div class="room-status">
                                     <p>Room Status</p>
-                                    <div class="status">
-                                        Available
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="floor-card" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#profileModal">
-                                <h6>NO. A-1</h6>
-                                <div class="room-status">
-                                    <p>Room Status</p>
-                                    <div class="status">
-                                        Available
+                                    <div class="status booked">
+                                        Booked
                                     </div>
                                 </div>
                             </div>
@@ -363,6 +363,75 @@
         </div>
     </section>
 
+    <!-- ==================Add/ booking modal============== -->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="addModalLabel"><h5>Occupants Information</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <form action="post" class="mt-5">
+                        <div class="mb-3">
+                            <label for="name" class="">FullName</label>
+                            <input type="name" class="form-control" id="name" placeholder="Enter full Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="">Phone Number</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="school" class="">School</label>
+                            <input type="text" class="form-control" id="school" placeholder="Enter School">
+                        </div>
+                        <div class="mb-3">
+                            <label for="course" class="">Course</label>
+                            <input type="text" class="form-control" id="course" placeholder="Enter Course">
+                        </div>
+                        <div class="short-input ">
+                            <div class="mb-3 _input-cont">
+                                <label for="duration" class="">Duration</label>
+                                <input type="text" class="form-control" id="duration" placeholder="Enter Duration">
+                            </div>
+                            <div class="mb-3 _input-cont">
+                                <label for="room" class="">Room</label>
+                                <input type="text" class="form-control" id="room" placeholder="Enter Room">
+                            </div>
+                        </div>
+                        <div class="short-input">
+                            <div class="mb-3">
+                                <label for="date-released" class="">Date Released</label>
+                                <input type="date" class="form-control" id="date-released" placeholder="Enter Date Released">
+                            </div>
+                            <div class="mb-3">
+                                <label for="expiry-date" class="">Expiry Date</label>
+                                <input type="date" class="form-control" id="expiry-date" placeholder="Enter Expiry Date">
+                            </div>
+                        </div>
+                        <div class="select">
+                            <label for="status" class="">Status</label>
+                            <select class="form-select" id="status">
+                                <option selected>Select Status</option>
+                                <option value="1">Available</option>
+                                <option value="2">Booked</option>
+                                
+                            </select>
+
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- ==================Edit modal============== -->
     
     <!-- Modal -->
@@ -433,7 +502,7 @@
                             </select>
 
                         </div>
-
+                        
                     </form>
                 </div>
                 <div class="modal-footer">

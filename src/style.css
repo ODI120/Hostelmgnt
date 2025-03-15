@@ -666,6 +666,11 @@ color: var(--color-background) !important;
     background: var(--pure-white, #FFF);
     flex: 1 0 0;
 }
+
+.floor-card .booked{
+    color: #01804f !important;
+    background-color: #01804f3a !important;
+}
 .room-status{
     display: flex;
     justify-content: space-between;
@@ -844,3 +849,5 @@ label{
     flex: 1 0 0;
     min-width: 100px;
 }
+
+/* ============================= */
