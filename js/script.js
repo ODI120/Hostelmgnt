@@ -379,4 +379,76 @@ function showPage(page) {
 // Initialize pagination when the page loads
 document.addEventListener('DOMContentLoaded', initializePagination);
 
+// Dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all dropdown triggers
+    const dropdownTriggers = document.querySelectorAll('.profile-dropdown i, .notification-dropdown i, .settings-dropdown i');
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.profile-dropdown, .notification-dropdown, .settings-dropdown')) {
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(dropdown => dropdown.classList.remove('show'));
+        }
+    });
+
+    // Toggle dropdowns on click
+    dropdownTriggers.forEach(trigger => {
+        trigger.addEventListener('click', function(event) {
+            event.stopPropagation();
+            
+            // Close all other dropdowns
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            dropdowns.forEach(dropdown => {
+                if (dropdown !== this.parentElement.querySelector('.dropdown-content')) {
+                    dropdown.classList.remove('show');
+                }
+            });
+            
+            // Toggle current dropdown
+            const dropdownContent = this.parentElement.querySelector('.dropdown-content');
+            dropdownContent.classList.toggle('show');
+        });
+    });
+
+    // Handle notification item clicks
+    const notificationItems = document.querySelectorAll('.notification-item');
+    notificationItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Add your notification click handling logic here
+            console.log('Notification clicked:', this.querySelector('.notification-content p').textContent);
+        });
+    });
+
+    // Handle mark all as read click
+    const markAllRead = document.querySelector('.mark-all-read');
+    if (markAllRead) {
+        markAllRead.addEventListener('click', function(event) {
+            event.preventDefault();
+            // Add your mark all as read logic here
+            console.log('Mark all as read clicked');
+        });
+    }
+});
+
+// Theme toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    // Theme toggle click handler
+    const themeToggle = document.querySelector('.settings-dropdown a[href="#"] i.bi-brightness-high').parentElement;
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+});
+
 

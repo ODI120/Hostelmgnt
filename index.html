@@ -101,9 +101,65 @@
                 </div>
                 
                 <div class="profile">
-                    <i class="bi bi-person-circle" role="button" aria-label="User profile"></i>
-                    <i class="bi bi-bell-fill" role="button" aria-label="Notifications"></i>
-                    <i class="bi bi-gear" role="button" aria-label="Settings"></i>
+                    <div class="profile-dropdown">
+                        <i class="bi bi-person-circle" role="button" aria-label="User profile"></i>
+                        <div class="dropdown-content">
+                            <div class="dropdown-header">
+                                <img src="img/OIP.jpg" alt="user" class="dropdown-avatar">
+                                <div class="dropdown-user-info">
+                                    <div>
+                                        <h6>John Doe</h6>
+                                        <p>Administrator</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#adminProfileModal"><i class="bi bi-person"></i> My Profile</a>
+                            <a href="#"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                        </div>
+                    </div>
+
+                    <div class="notification-dropdown">
+                        <i class="bi bi-bell-fill" role="button" aria-label="Notifications"></i>
+                        <div class="dropdown-content">
+                            <div class="dropdown-header flex-direction-column">
+                                <h6>Notifications</h6>
+                                <a href="#" class="mark-all-read">Mark all as read</a>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <div class="notification-item">
+                                <i class="bi bi-info-circle"></i>
+                                <div class="notification-content">
+                                    <p>New student registration</p>
+                                    <small>2 minutes ago</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="bi bi-exclamation-triangle"></i>
+                                <div class="notification-content">
+                                    <p>Room maintenance required</p>
+                                    <small>1 hour ago</small>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="bi bi-check-circle"></i>
+                                <div class="notification-content">
+                                    <p>Payment received</p>
+                                    <small>3 hours ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-dropdown">
+                        <i class="bi bi-gear" role="button" aria-label="Settings"></i>
+                        <div class="dropdown-content">
+                            <a href="#"><i class="bi bi-brightness-high"></i> Theme</a>
+                            <!-- <a href="#"><i class="bi bi-shield-lock"></i> Security</a> -->
+                            <!-- <a href="#"><i class="bi bi-bell"></i> Notifications</a> -->
+                            <!-- <a href="#"><i class="bi bi-lock"></i> Privacy</a> -->
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -350,102 +406,6 @@
                                         <td>Avionice</td>
                                         <td>6 months</td>
                                         <td>NO. A-1</td>
-                                        <td>12/01/2022</td>
-                                        <td>12/07/2022</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
-                                                Edit
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>John Doe</td>
-                                        <td>0789999999</td>
-                                        <td>Aircraft Maintainance School</td>
-                                        <td>Avionice</td>
-                                        <td>6 months</td>
-                                        <td>NO. A-2</td>
-                                        <td>12/01/2022</td>
-                                        <td>12/07/2022</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
-                                                Edit
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>John Doe</td>
-                                        <td>0789999999</td>
-                                        <td>Aircraft Maintainance School</td>
-                                        <td>Avionice</td>
-                                        <td>6 months</td>
-                                        <td>NO. A-2</td>
-                                        <td>12/01/2022</td>
-                                        <td>12/07/2022</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
-                                                Edit
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>John Doe</td>
-                                        <td>0789999999</td>
-                                        <td>Aircraft Maintainance School</td>
-                                        <td>Avionice</td>
-                                        <td>6 months</td>
-                                        <td>NO. A-2</td>
-                                        <td>12/01/2022</td>
-                                        <td>12/07/2022</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
-                                                Edit
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>John Doe</td>
-                                        <td>0789999999</td>
-                                        <td>Aircraft Maintainance School</td>
-                                        <td>Avionice</td>
-                                        <td>6 months</td>
-                                        <td>NO. A-2</td>
-                                        <td>12/01/2022</td>
-                                        <td>12/07/2022</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
-                                                Edit
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>John Doe</td>
-                                        <td>0789999999</td>
-                                        <td>Aircraft Maintainance School</td>
-                                        <td>Avionice</td>
-                                        <td>6 months</td>
-                                        <td>NO. A-2</td>
-                                        <td>12/01/2022</td>
-                                        <td>12/07/2022</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
-                                                Edit
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>John Doe</td>
-                                        <td>0789999999</td>
-                                        <td>Aircraft Maintainance School</td>
-                                        <td>Avionice</td>
-                                        <td>6 months</td>
-                                        <td>NO. A-2</td>
                                         <td>12/01/2022</td>
                                         <td>12/07/2022</td>
                                         <td>
@@ -921,6 +881,67 @@
 
                     <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================Admin Profile Modal============== -->
+    <div class="modal fade" id="adminProfileModal" tabindex="-1" aria-labelledby="adminProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adminProfileModalLabel">Admin Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="admin-profile">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <img src="img/OIP.jpg" alt="Admin Profile">
+                                <div class="avatar-edit">
+                                    <i class="bi bi-camera"></i>
+                                    <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                                </div>
+                            </div>
+                            <div class="profile-info">
+                                <h4>John Doe</h4>
+                                <p>Administrator</p>
+                            </div>
+                        </div>
+
+                        <div class="profile-details">
+                            <div class="detail-group">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control" value="John Doe" id="admin-name">
+                            </div>
+                            <div class="detail-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" value="john.doe@ncat.edu.ng" id="admin-email">
+                            </div>
+                            <div class="detail-group">
+                                <label>Phone Number</label>
+                                <input type="tel" class="form-control" value="+234 123 456 7890" id="admin-phone">
+                            </div>
+                            <div class="detail-group">
+                                <label>Role</label>
+                                <input type="text" class="form-control" value="Administrator" disabled>
+                            </div>
+                            <div class="detail-group">
+                                <label>Department</label>
+                                <input type="text" class="form-control" value="Hostel Management" id="admin-dept">
+                            </div>
+                            <div class="detail-group">
+                                <label>Date Joined</label>
+                                <input type="text" class="form-control" value="January 1, 2024" disabled>
+                            </div>
+                        </div>
+
+                        <div class="profile-actions">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" id="save-profile">Save Changes</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
