@@ -3,15 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NCAT Hostel Management System - Manage student accommodations efficiently">
+    <meta name="keywords" content="hostel management, student accommodation, NCAT, room booking, student housing">
+    <meta name="author" content="NCAT">
+    <!-- Add IE compatibility mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Add theme color for mobile browsers -->
+    <meta name="theme-color" content="#0d6efd">
+    <!-- Add apple specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NCAT Hostel">
 
     <title>Admin dashboard</title>
+    <!-- Add favicon for different devices -->
     <link rel="shortcut icon" href="img/favicon.ico.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon.ico.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.ico.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico.png">
+    <link rel="manifest" href="manifest.json">
 
+    <!-- Add preload for critical resources -->
+    <link rel="preload" href="src/style.css" as="style">
+    <link rel="preload" href="src/bootstrap.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
+    <link rel="preload" href="js/bootstrap.js" as="script">
+
+    <!-- Add stylesheets with fallback -->
     <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="src/bootstrap.css">
+    <!-- Add fallback for modern CSS features -->
+    <link rel="stylesheet" href="src/fallback.css">
 
+    <!-- Add polyfill for older browsers -->
+    <script src="https://polyfill.io/v3/polyfill.min.js"></script>
 </head>
 <body>
+    <!-- Add noscript fallback -->
+    <noscript>
+        <div style="text-align: center; padding: 20px;">
+            <p>JavaScript is required to use this application. Please enable JavaScript in your browser settings.</p>
+        </div>
+    </noscript>
+
+    <!-- Add loading indicator -->
+    <div id="loading">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
 
     <section class="dashboard ">
         <div class="side-bar " id="sidebar">
@@ -53,7 +93,7 @@
             
             <div class="top-nav">
                 <div class="d-flex">
-                    <div class="toggle toggle-button"  id="toggle-btn">
+                    <div class="toggle toggle-button" id="toggle-btn" role="button" aria-label="Toggle sidebar">
                         <i class="bi bi-list"></i>
                     </div>
     
@@ -61,9 +101,9 @@
                 </div>
                 
                 <div class="profile">
-                    <i class="bi bi-person-circle"></i>
-                    <i class="bi bi-bell-fill"></i>
-                    <i class="bi bi-gear"></i>
+                    <i class="bi bi-person-circle" role="button" aria-label="User profile"></i>
+                    <i class="bi bi-bell-fill" role="button" aria-label="Notifications"></i>
+                    <i class="bi bi-gear" role="button" aria-label="Settings"></i>
                 </div>
             </div>
 
@@ -232,8 +272,8 @@
                         <div class="btn select-btn active" data-target="first-floor">Rooms</div>
                         <div class="btn select-btn" data-target="block-a-occupants">Occupants</div>
                     </div>
-                    <form action="post">
-                        <input type="text" id=""  placeholder="Search" class="border border-2 form-control">
+                    <form action="post" class="mt-5" role="search">
+                        <input type="search" id="search" placeholder="Search" class="border border-2 form-control" aria-label="Search">
                     </form>
                 </div>
                 <!-- --------------Block-A rooms------------------------ -->
@@ -301,39 +341,293 @@
                                     <th>Expiry Date</th>
                                     <th>ACTIONS</th>
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Okechukwu James</td>
-                                    <td>0789999999</td>
-                                    <td>Aircraft Maintainance School</td>
-                                    <td>Avionice</td>
-                                    <td>6 months</td>
-                                    <td>NO. A-1</td>
-                                    <td>12/01/2022</td>
-                                    <td>12/07/2022</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
-                                            Edit
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>John Doe</td>
-                                    <td>0789999999</td>
-                                    <td>Aircraft Maintainance School</td>
-                                    <td>Avionice</td>
-                                    <td>6 months</td>
-                                    <td>NO. A-2</td>
-                                    <td>12/01/2022</td>
-                                    <td>12/07/2022</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
-                                            Edit
-                                        </button>
-                                    </td>
-                                </tr>
+                                <tbody id="tableBody">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Okechukwu James</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-1</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>John Doe</td>
+                                        <td>0789999999</td>
+                                        <td>Aircraft Maintainance School</td>
+                                        <td>Avionice</td>
+                                        <td>6 months</td>
+                                        <td>NO. A-2</td>
+                                        <td>12/01/2022</td>
+                                        <td>12/07/2022</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                Edit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
                             </table>
+                            <div class="pagination-container ">
+                                
+                                <div class="pagination-controls">
+                                    <button class="btn btn-outline-primary me-2" id="prevPage">Previous</button>
+
+                                    <div class="pagination-info" >
+                                        Page <p id="currentPage">1</p> of <p id="totalPages">1</p>
+                                    </div>
+
+                                    <button class="btn btn-outline-primary" id="nextPage">Next</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -375,59 +669,57 @@
                 </div>
                 <div class="modal-body">
                     
-                    <form action="post" class="mt-5">
+                    <form action="post" class="mt-5" id="add-form">
                         <div class="mb-3">
                             <label for="name" class="">FullName</label>
-                            <input type="name" class="form-control" id="name" placeholder="Enter full Name">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter full Name" required minlength="2" maxlength="50">
                         </div>
                         <div class="mb-3">
                             <label for="phone" class="">Phone Number</label>
-                            <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone number" required pattern="[0-9]{10}">
                         </div>
                         <div class="mb-3">
                             <label for="school" class="">School</label>
-                            <input type="text" class="form-control" id="school" placeholder="Enter School">
+                            <input type="text" class="form-control" id="school" name="school" placeholder="Enter School" required>
                         </div>
                         <div class="mb-3">
                             <label for="course" class="">Course</label>
-                            <input type="text" class="form-control" id="course" placeholder="Enter Course">
+                            <input type="text" class="form-control" id="course" name="course" placeholder="Enter Course" required>
                         </div>
                         <div class="short-input ">
                             <div class="mb-3 _input-cont">
                                 <label for="duration" class="">Duration</label>
-                                <input type="text" class="form-control" id="duration" placeholder="Enter Duration">
+                                <input type="text" class="form-control" id="duration" name="duration" placeholder="Enter Duration" required>
                             </div>
                             <div class="mb-3 _input-cont">
                                 <label for="room" class="">Room</label>
-                                <input type="text" class="form-control" id="room" placeholder="Enter Room">
+                                <input type="text" class="form-control" id="room" name="room" placeholder="Enter Room" required>
                             </div>
                         </div>
                         <div class="short-input">
                             <div class="mb-3">
                                 <label for="date-released" class="">Date Released</label>
-                                <input type="date" class="form-control" id="date-released" placeholder="Enter Date Released">
+                                <input type="date" class="form-control" id="date-released" name="date-released" required>
                             </div>
                             <div class="mb-3">
                                 <label for="expiry-date" class="">Expiry Date</label>
-                                <input type="date" class="form-control" id="expiry-date" placeholder="Enter Expiry Date">
+                                <input type="date" class="form-control" id="expiry-date" name="expiry-date" required>
                             </div>
                         </div>
                         <div class="select">
                             <label for="status" class="">Status</label>
-                            <select class="form-select" id="status">
-                                <option selected>Select Status</option>
+                            <select class="form-select" id="status" name="status" required>
+                                <option value="">Select Status</option>
                                 <option value="1">Available</option>
                                 <option value="2">Booked</option>
-                                
                             </select>
-
                         </div>
                         
                     </form>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" value="add-form" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -453,7 +745,7 @@
                         </div>
                     </div>
 
-                    <form action="post" class="mt-5">
+                    <form action="post" class="mt-5" id="edit-form">
                         <div class="mb-3">
                             <label for="name" class="">FullName</label>
                             <input type="name" class="form-control" id="name" placeholder="Enter full Name">
@@ -507,7 +799,7 @@
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" value="edit-form" class="btn btn-primary">Update</button>
                 </div>
             </div>
         </div>
@@ -634,7 +926,10 @@
         </div>
     </div>
 
+    <!-- Add scripts with fallback -->
+    <script src="js/fallback.js"></script>
     <script src="js/script.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </body>
 </html>
